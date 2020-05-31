@@ -10,9 +10,11 @@ import (
 //bson = how look in db
 //json = how it is show
 
+//must be not a space between comma and omitempty
+
 // User - Model
 type User struct {
-	ID        primitive.ObjectID `bson:"_id, omitempty" json:"id"`
+	ID        primitive.ObjectID `bson:"_id,omitempty" json:"id"`
 	Name      string             `bson:"name" json:"name,omitempty"`
 	LastName  string             `bson:"lastName" json:"lastName,omitempty"`
 	BirthDate time.Time          `bson:"birthDate" json:"birthDate,omitempty"`

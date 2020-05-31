@@ -48,7 +48,7 @@ func ProcessToken(tk string) (*models.Claim, bool, string, error) {
 	//valid token
 	if err == nil {
 		//claims stored the JWT and the payload can be used
-		_, found, ID := db.CheckUserExist(claims.Email)
+		_, found, _ := db.CheckUserExist(claims.Email)
 
 		//user exist
 		if found == true {

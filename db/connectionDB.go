@@ -17,7 +17,8 @@ import (
 var MongoCN = ConnectDB()
 
 //default when push
-var clientOptions = options.Client().ApplyURI("mongodb+srv://username:<password>@murl-tocluster.mongodb.net/test?retryWrites=true&w=majority")
+// var clientOptions = options.Client().ApplyURI("mongodb+srv://username:<password>@murl-tocluster.mongodb.net/test?retryWrites=true&w=majority")
+var clientOptions = options.Client().ApplyURI("mongodb+srv://sabal:SabalObzen420#@meganeura-fgfoc.mongodb.net/test?retryWrites=true&w=majority")
 
 //ConnectDB - Database connection
 func ConnectDB() *mongo.Client {

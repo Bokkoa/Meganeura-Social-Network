@@ -17,7 +17,7 @@ func ShowProfile(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	profile, err := db.SearchProfile(ID)
+	profile, err := db.SearchUser(ID)
 
 	if err != nil {
 		http.Error(w, "Ocurrio un error buscando el perfil"+err.Error(), 400)

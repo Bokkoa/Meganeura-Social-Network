@@ -20,7 +20,12 @@ func Handlers() {
 	router.HandleFunc("/register", middlew.CheckDB(routers.Register)).Methods("POST")
 	router.HandleFunc("/login", middlew.CheckDB(routers.Login)).Methods("POST")
 	// nested middleware funcs as two middlewares
-	router.HandleFunc("/showprofile", middlew.CheckDB(middlew.ValidateJWT(routers.ShowProfile))).Methods("POST")
+	router.HandleFunc("/showprofile", middlew.CheckDB(middlew.ValidateJWT(routers.ShowProfile))).Methods("GET")
+
+	router.HandleFunc("/editprofile", middlew.CheckDB(middlew.ValidateJWT(routers.EditProfile))).Methods("PUT")
+
+	router.HandleFunc("/nugget", middlew.CheckDB(middlew.ValidateJWT(routers.InsertNugget))).Methods("POST")
+	router.HandleFunc("/readnuggets", middlew.CheckDB(middlew.ValidateJWT(routers.ShowNuggets))).Methods("GET")
 
 	//get by env
 	PORT := os.Getenv("PORT")

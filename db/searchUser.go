@@ -10,8 +10,8 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-// SearchProfile - by ID
-func SearchProfile(ID string) (models.User, error) {
+// SearchUser - by ID
+func SearchUser(ID string) (models.User, error) {
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*15)
 	defer cancel()

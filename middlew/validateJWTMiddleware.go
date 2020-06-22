@@ -10,6 +10,7 @@ import (
 func ValidateJWT(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
+		// fmt.Println(r.Header.Get("Authorization"))
 		//Only interested for error
 		_, _, _, err := routers.ProcessToken(r.Header.Get("Authorization"))
 

@@ -11,7 +11,7 @@ import (
 //ListUsers - Getting users with options
 func ListUsers(w http.ResponseWriter, r *http.Request) {
 
-	if len(r.URL.Query.Get("page")) < 1 {
+	if len(r.URL.Query().Get("page")) < 1 {
 		http.Error(w, "Debe enviar el parámetro a la pagina", http.StatusBadRequest)
 		return
 	}
